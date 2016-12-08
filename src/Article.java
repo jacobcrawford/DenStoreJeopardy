@@ -1,11 +1,8 @@
-/**
- * Created by Jacob on 12/8/2016.
- */
 public class Article {
-    private String article;
-    private String subject;
+    private final String article;
+    private final String subject;
 
-    public Article(String subject,String article) {
+    public Article(String subject, String article) {
         this.article = article;
         this.subject = subject;
     }
@@ -14,15 +11,7 @@ public class Article {
         return article;
     }
 
-    public void setArticle(String article) {
-        this.article = article;
-    }
-
     public String getSubject() {
         return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 }

@@ -1,13 +1,11 @@
-import javafx.util.Pair;
-
 public class GameImpl implements Game {
 
-    private WordFetcherStrategy fetcher;
+    private ArticleFetcherStrategy fetcher;
     private WordRemover remover;
     private String currentArticle;
     private String currentAnswer;
 
-    public GameImpl(WordFetcherStrategy fetcher, WordRemover remover) {
+    public GameImpl(ArticleFetcherStrategy fetcher, WordRemover remover) {
         this.fetcher = fetcher;
         this.remover = remover;
     }
@@ -15,7 +13,7 @@ public class GameImpl implements Game {
 
     @Override
     public void getArticleFromWeb() {
-        Article wordArticlePair = fetcher.fetchWordArticlePair();
+        Article wordArticlePair = fetcher.fetchArticle();
         currentArticle =  wordArticlePair.getArticle();
         currentAnswer =  wordArticlePair.getSubject();
     }

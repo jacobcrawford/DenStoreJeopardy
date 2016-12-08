@@ -7,5 +7,8 @@ public class Main {
         String finalArticle = game.getCurrentArticle();
         System.out.println(finalArticle);
         System.out.println(answer);
+
+        JsoupFetcher downloader = new JsoupFetcher();
+        System.out.println(downloader.fetchArticle().getArticle());
     }
 }
