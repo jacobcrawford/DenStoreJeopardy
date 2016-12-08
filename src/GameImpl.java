@@ -1,7 +1,6 @@
 public class GameImpl implements Game {
 
     private ArticleFetcherStrategy fetcher;
-    private WordRemover remover;
     private Article article;
     private WordRemoverStrategy remover;
 
