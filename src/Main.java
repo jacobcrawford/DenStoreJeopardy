@@ -1,5 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        GameImpl game = new GameImpl(new FakeFetcher(), new WordRemover());
+        game.getArticleFromWeb();
+        String answer = game.getCurrentAnswer();
+        game.getFinalArticle();
+        String finalArticle = game.getCurrentArticle();
+        System.out.println(finalArticle);
+        System.out.println(answer);
     }
 }
