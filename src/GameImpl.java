@@ -1,11 +1,13 @@
+import javafx.util.Pair;
+
 public class GameImpl implements Game {
 
     private ArticleFetcherStrategy fetcher;
-    private WordRemover remover;
+    private WordRemoverStrategy remover;
     private String currentArticle;
     private String currentAnswer;
 
-    public GameImpl(ArticleFetcherStrategy fetcher, WordRemover remover) {
+    public GameImpl(ArticleFetcherStrategy fetcher, WordRemoverStrategy remover) {
         this.fetcher = fetcher;
         this.remover = remover;
     }
