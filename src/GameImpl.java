@@ -3,11 +3,13 @@ public class GameImpl implements Game {
     private ArticleFetcherStrategy fetcher;
     private WordRemover remover;
     private Article article;
+    private WordRemoverStrategy remover;
 
-    public GameImpl(ArticleFetcherStrategy fetcher, WordRemover remover) {
+    public GameImpl(ArticleFetcherStrategy fetcher, WordRemoverStrategy remover) {
         this.fetcher = fetcher;
         this.remover = remover;
     }
+
 
     @Override
     public void fetchArticleFromWeb() {
