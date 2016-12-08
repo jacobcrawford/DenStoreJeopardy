@@ -10,8 +10,8 @@ public class JsoupFetcher implements ArticleFetcherStrategy {
     private Document doc;
 
     @Override
-    public Article fetchArticle() {
-        String articleURL = getRandomArticleURL();
+    public Article fetchArticle(String category) {
+        String articleURL = getRandomArticleURL(Category.BIL_BÅD_FLY_MM);
         try {
             doc = Jsoup.connect(articleURL).get();
         } catch (IOException ignored) {
@@ -40,7 +40,7 @@ public class JsoupFetcher implements ArticleFetcherStrategy {
         return paragraphs.first().text();
     }
 
-    private String getRandomArticleURL() {
+    private String getRandomArticleURL(String category) {
         return "http://denstoredanske.dk/Geografi_og_historie/Folkeslag/Etnografiske_termer/overtro";
     }
 }

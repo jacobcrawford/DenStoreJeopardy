@@ -1,4 +1,4 @@
 public interface ArticleFetcherStrategy {
 
-    Article fetchArticle();
+    Article fetchArticle(String category);
 }

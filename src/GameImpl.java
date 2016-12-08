@@ -2,33 +2,25 @@ public class GameImpl implements Game {
 
     private ArticleFetcherStrategy fetcher;
     private WordRemover remover;
-    private String currentArticle;
-    private String currentAnswer;
+    private Article article;
 
     public GameImpl(ArticleFetcherStrategy fetcher, WordRemover remover) {
         this.fetcher = fetcher;
         this.remover = remover;
     }
 
-
     @Override
-    public void getArticleFromWeb() {
-        Article wordArticlePair = fetcher.fetchArticle();
-        currentArticle =  wordArticlePair.getArticle();
-        currentAnswer =  wordArticlePair.getSubject();
+    public void fetchArticleFromWeb() {
+        article = fetcher.fetchArticle(Category.BIL_BÅD_FLY_MM);
     }
 
     @Override
-    public void getFinalArticle() {
-
-        currentArticle = remover.replaceWordInText(currentAnswer,currentArticle,"XXX");
+    public boolean guess(String guess) {
+        return article.getSubject().equals(guess);
     }
 
-    public String getCurrentArticle() {
-        return currentArticle;
-    }
-
-    public String getCurrentAnswer() {
-        return currentAnswer;
+    @Override
+    public String getArticleContent() {
+        return remover.replaceWordInText(article.getSubject(), article.getArticle(), "XXX");
     }
 }

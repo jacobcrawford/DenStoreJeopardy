@@ -14,4 +14,6 @@ public class Article {
     public String getSubject() {
         return subject;
     }
+
+
 }

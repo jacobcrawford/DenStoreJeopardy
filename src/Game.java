@@ -1,5 +1,6 @@
 
 public interface Game {
-    void getArticleFromWeb();
-    void getFinalArticle();
+    void fetchArticleFromWeb();
+    boolean guess(String guess);
+    String getArticleContent();
 }
